@@ -10,21 +10,24 @@
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/home.css">
-    <title>Document</title>
+    <title>Shopping List</title>
 </head>
 
 <body>
     <header>
-        <div class="gutter-right logo">
-            <img src="../assets/big-logo.png" />
-        </div>
+        <h1>Welcome to your doom!</h1>
+        <button id="logout">Logout</button>
     </header>    
-    <button id="logout">Logout</button>
     <main>
-        <h1>You are logged in!</h1>
+        <form id="create">
+            <label>Quantity</label>
+            <input id="quantity">
+            <label>Item</label>
+            <input id="item">
+        </form>
+        <ul id="shoppingList"></ul>
     </main>
     <footer>
-        <div class="copy gutter-right">&copy; 2021 Alchemy Code Lab</div>
     </footer>
     <script type="module" src="./other-page.js"></script>
 </body>
