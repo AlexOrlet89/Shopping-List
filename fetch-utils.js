@@ -3,6 +3,14 @@ const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZ
 
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
+export async function insertRow(x, y) {
+    const response = client.from('Shopping').insert([
+        { quantity: `${x}`, item: `${y}` }
+    ]);
+    console.log('insertRow', response);
+    return checkError(response);
+}
+//shopping quantity item bought
 export function getUser() {
     return client.auth.session() && client.auth.session().user;
 }
@@ -37,6 +45,6 @@ export async function logout() {
     return (window.location.href = '../');
 }
 
-// function checkError({ data, error }) {
-//     return error ? console.error(error) : data;
-// }
+function checkError({ data, error }) {
+    return error ? console.error(error) : data;
+}

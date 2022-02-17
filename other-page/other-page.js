@@ -1,4 +1,4 @@
-import { checkAuth, logout } from '../fetch-utils.js';
+import { checkAuth, logout, insertRow } from '../fetch-utils.js';
 
 checkAuth();
 
@@ -15,4 +15,6 @@ const item = document.getElementById('item');
 create.addEventListener('submit', async (e)=> {
     e.preventDefault();
     console.log(quantity.value, item.value);
+    await insertRow(quantity.value, item.value); //fetchfunction for inserting row
+    create.reset();
 });
