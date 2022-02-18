@@ -22,3 +22,10 @@ export async function renderItem(items) {
     }   
     return shoppingList;
 }
+
+// this function should return just an li, other functions will be pushed to other page.js.
+// appending to shoppingList
+//      const listItem = renderItem(items);
+//      shoppingList.append(listItem)
+// adding eventListener (same const);
+//      listItem.addEventListener
