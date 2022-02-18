@@ -5,9 +5,7 @@ export async function renderItem(item) {
     console.log(item.quantity, item.item);
     const listItem = document.createElement('li');
     listItem.textContent = `${item.quantity} ${item.item}`;
-    if (`${item.bought}` === 'true') {
-        listItem.classList.add('bought');
-    }
+
     return listItem;
 }   
 

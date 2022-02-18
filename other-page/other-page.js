@@ -1,4 +1,4 @@
-import { checkAuth, logout, insertRow, fetchItems, deleteList } from '../fetch-utils.js';
+import { checkAuth, logout, insertRow, fetchItems, deleteList, updateBought } from '../fetch-utils.js';
 import { renderItem } from '../render-utils.js';
 
 const create = document.getElementById('create');
@@ -11,10 +11,16 @@ window.addEventListener('load', async ()=> {
     const items = await fetchItems();
     console.log(items);
     for (let item of items) {
+        console.log(item.id);
         const li = await renderItem(item);
-        console.log(li);
-        shoppingList.append(li);}
-
+        li.addEventListener('click', async ()=>{
+            li.classList.add('bought');
+            updateBought(item.id);});
+        
+        if (`${item.bought}` === 'true') {
+            li.classList.add('bought');}
+        shoppingList.append(li);
+    }
 });
 
 const logoutButton = document.getElementById('logout');
@@ -36,6 +42,8 @@ create.addEventListener('submit', async (e)=> {
     for (let item of items) {
         const li = await renderItem(item);
         console.log(li);
+        if (`${item.bought}` === 'true') {
+            li.classList.add('bought');}
         shoppingList.append(li);}
 });
 
