@@ -2,6 +2,11 @@ import { checkAuth, logout, insertRow, fetchItems } from '../fetch-utils.js';
 import { renderItem } from '../render-utils.js';
 
 checkAuth();
+window.addEventListener('load', async ()=> {
+    const items = await fetchItems();
+    await renderItem(items);
+
+});
 
 const logoutButton = document.getElementById('logout');
 
