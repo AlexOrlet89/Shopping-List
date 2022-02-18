@@ -15,6 +15,12 @@ export async function updateBought(id) {
     return checkError(response);
 }
 
+export async function deleteList() {
+    const user = getUser;
+    console.log('deleteList is called', user.user_id);
+    const response = await client.from('Shopping').delete().match({ user });
+    return checkError(response);
+}
 export async function insertRow(x, y) {
     const response = await client.from('Shopping').insert([
         { quantity: `${x}`, item: `${y}` }

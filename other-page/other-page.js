@@ -1,4 +1,4 @@
-import { checkAuth, logout, insertRow, fetchItems } from '../fetch-utils.js';
+import { checkAuth, logout, insertRow, fetchItems, deleteList } from '../fetch-utils.js';
 import { renderItem } from '../render-utils.js';
 
 checkAuth();
@@ -9,6 +9,7 @@ window.addEventListener('load', async ()=> {
 });
 
 const logoutButton = document.getElementById('logout');
+const deleteButton = document.getElementById('delete');
 
 logoutButton.addEventListener('click', () => {
     logout();
@@ -27,4 +28,12 @@ create.addEventListener('submit', async (e)=> {
     create.reset();
     const items = await fetchItems();
     await renderItem(items);
+});
+
+deleteButton.addEventListener('click', async ()=> {   
+    console.log('deleteButton Clicked');
+    await deleteList();
+
+    // location.reload();
+
 });
