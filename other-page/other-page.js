@@ -42,6 +42,9 @@ create.addEventListener('submit', async (e)=> {
     for (let item of items) {
         const li = await renderItem(item);
         console.log(li);
+        li.addEventListener('click', async ()=>{
+            li.classList.add('bought');
+            updateBought(item.id);});
         if (`${item.bought}` === 'true') {
             li.classList.add('bought');}
         shoppingList.append(li);}

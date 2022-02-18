@@ -12,7 +12,7 @@ test('renderItem takes an item object and returns a dom element', async (expect)
     //Act 
     // Call the function you're testing and set the result to a const
     const actual = await renderItem({ quantity: '3', item: 'test' });
-    console.log(actual);
+    // console.log(actual);
     //Expect
     // Make assertions about what is expected versus the actual result
     expect.equal(actual.outerHTML, expected);

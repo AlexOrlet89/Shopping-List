@@ -17,7 +17,7 @@ export async function updateBought(id) {
 
 export async function deleteList() {
     const user = client.auth.user().id;
-    console.log('deleteList is called', user);
+    // console.log('deleteList is called', user);
     const response = await client.from('Shopping').delete().match({ user_id: user });
     return checkError(response);
 }
