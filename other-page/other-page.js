@@ -1,4 +1,5 @@
-import { checkAuth, logout, insertRow } from '../fetch-utils.js';
+import { checkAuth, logout, insertRow, fetchItems } from '../fetch-utils.js';
+import { renderItem } from '../render-utils.js';
 
 checkAuth();
 
@@ -17,4 +18,6 @@ create.addEventListener('submit', async (e)=> {
     console.log(quantity.value, item.value);
     await insertRow(quantity.value, item.value); //fetchfunction for inserting row
     create.reset();
+    const items = await fetchItems();
+    await renderItem(items);
 });

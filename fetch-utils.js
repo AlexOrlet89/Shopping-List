@@ -3,8 +3,19 @@ const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZ
 
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
+export async function fetchItems() {
+    const response = await client.from('Shopping').select();
+    console.log('fetchItems');
+    return checkError(response);
+}
+
+export async function updateBought(id) {
+    const response = await client.from('Shopping').update({ bought: 'true' }).eq('id', `${id}`);
+    return checkError(response);
+}
+
 export async function insertRow(x, y) {
-    const response = client.from('Shopping').insert([
+    const response = await client.from('Shopping').insert([
         { quantity: `${x}`, item: `${y}` }
     ]);
     console.log('insertRow', response);
