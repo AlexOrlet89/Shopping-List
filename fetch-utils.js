@@ -16,9 +16,9 @@ export async function updateBought(id) {
 }
 
 export async function deleteList() {
-    const user = getUser;
-    console.log('deleteList is called', user.user_id);
-    const response = await client.from('Shopping').delete().match({ user });
+    const user = client.auth.user().id;
+    console.log('deleteList is called', user);
+    const response = await client.from('Shopping').delete().match({ user_id: user });
     return checkError(response);
 }
 export async function insertRow(x, y) {

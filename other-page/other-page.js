@@ -34,6 +34,6 @@ deleteButton.addEventListener('click', async ()=> {
     console.log('deleteButton Clicked');
     await deleteList();
 
-    // location.reload();
+    location.reload();
 
 });
