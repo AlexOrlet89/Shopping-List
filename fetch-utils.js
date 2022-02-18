@@ -10,6 +10,7 @@ export async function fetchItems() {
 }
 
 export async function updateBought(id) {
+    console.log('updateBought', id);
     const response = await client.from('Shopping').update({ bought: 'true' }).eq('id', `${id}`);
     return checkError(response);
 }

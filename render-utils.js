@@ -7,15 +7,18 @@ export async function renderItem(items) {
     for (let item of items) {
         const listItem = document.createElement('li');
         listItem.textContent = `${item.quantity} ${item.item}`;
-        console.log(`${item.quantity} ${item.item}`);
+        console.log(`${item.quantity} ${item.item}, ${item.bought}`);
         shoppingList.append(listItem);
+        if (`${item.bought}` === 'true') {
+            listItem.classList.add('bought');
+        }
         listItem.addEventListener('click', async ()=> {
             listItem.classList.add('bought');
             console.log('clicked');
             //run a function in fetch.utils that updates a row using the item's id.
             await updateBought(item.id);
-        }
-        );
+        });
+        
     }   
     return shoppingList;
 }
