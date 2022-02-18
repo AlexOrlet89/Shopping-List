@@ -32,7 +32,11 @@ create.addEventListener('submit', async (e)=> {
     await insertRow(quantity.value, item.value); //fetchfunction for inserting row
     create.reset();
     const items = await fetchItems();
-    await renderItem(items);
+    console.log(items);
+    for (let item of items) {
+        const li = await renderItem(item);
+        console.log(li);
+        shoppingList.append(li);}
 });
 
 deleteButton.addEventListener('click', async ()=> {   
