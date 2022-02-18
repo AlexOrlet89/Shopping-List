@@ -2,10 +2,10 @@
 
 export async function renderItem(item) {
     // get items from a fetchItems function
-    console.log(item.quantity, item.item);
+    // console.log(item);
     const listItem = document.createElement('li');
     listItem.textContent = `${item.quantity} ${item.item}`;
-
+    // console.log(listItem);
     return listItem;
 }   
 
