@@ -3,6 +3,10 @@
     text-decoration: line-through;
 }
 
+*{
+    font-family: 'Roboto Serif', sans-serif;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -26,4 +30,11 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+h1 {
+    font-family: 'Shizuru', cursive;
+}
+h3 {
+    font-family: 'Shizuru', cursive;
 }
