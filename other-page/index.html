@@ -6,25 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,wght@1,100&family=Shizuru&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles/reset.css">
-    <link rel="stylesheet" href="../styles/style.css">
+    <!-- <link rel="stylesheet" href="../styles/reset.css"> -->
+    <!-- <link rel="stylesheet" href="../styles/style.css"> -->
     <link rel="stylesheet" href="../styles/home.css">
-    <title>Document</title>
+    <title>Shopping List</title>
 </head>
 
 <body>
     <header>
-        <div class="gutter-right logo">
-            <img src="../assets/big-logo.png" />
-        </div>
+        <h1>Welcome to your doom!</h1>
+        <button id="logout">Logout</button>
     </header>    
-    <button id="logout">Logout</button>
     <main>
-        <h1>You are logged in!</h1>
+        <form id="create">
+            <label>Quantity</label>
+            <input id="quantity">
+            <label>Item</label>
+            <input id="item">
+            <button id="submit">Submit</button>
+        </form>
+        <ul id="shoppingList"></ul>
+        <button id="delete">Clear List</button>
     </main>
     <footer>
-        <div class="copy gutter-right">&copy; 2021 Alchemy Code Lab</div>
     </footer>
     <script type="module" src="./other-page.js"></script>
 </body>

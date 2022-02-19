@@ -1,1 +1,40 @@
 /* add home page styles here */
+.bought {
+    text-decoration: line-through;
+}
+
+*{
+    font-family: 'Roboto Serif', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("/assets/groceries.jpg");
+}
+
+header {
+    background-color: rgba(240, 255, 241, 0.349);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80vw;
+    
+    margin-bottom: 20px;
+}
+
+main {
+    background-color: rgba(240, 248, 255, 0.349);
+    padding: 10px 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'Shizuru', cursive;
+}
+h3 {
+    font-family: 'Shizuru', cursive;
+}
